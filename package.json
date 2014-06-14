@@ -1,0 +1,16 @@
+{
+  "name": "anylive",
+  "version": "0.0.1",
+  "description": "a live-reload static severt cli tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stormslowly",
+  "license": "MIT",
+  "dependencies": {
+    "connect": "~2.19.6",
+    "tiny-lr": "0.0.7",
+    "connect-livereload": "~0.4.0"
+  }
+}
