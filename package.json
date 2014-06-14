@@ -6,11 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "anylive": "./anylive.js"
+  },
+  "keywords": [
+    "Static",
+    "file",
+    "server",
+    "live-reload"
+  ],
   "author": "stormslowly",
   "license": "MIT",
   "dependencies": {
     "connect": "~2.19.6",
-    "tiny-lr": "0.0.7",
+    "tiny-lr": "0.0.4",
     "connect-livereload": "~0.4.0"
   }
 }

@@ -30,7 +30,7 @@ staticServer.use(connect.directory(cwd));
 
 gaze(['**/*.js',
       '**/*.css',
-      '**/*html',
+      '**/*.html',
       '!.git/**',
       '!node_modules/**'
       ], function(err,watcher){
