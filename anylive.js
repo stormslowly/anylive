@@ -51,6 +51,7 @@ gaze(['**/*.js',
   liveReloadServer.listen(35729, function(){
     console.log('LiveReloadServer is ready...');
     watcher.on('all',function(e,files){
+      console.log('File:', files,'has',e,' LiveReload Triggered!');
       liveReloadServer.changed({body:{files:files}});
     });
 
