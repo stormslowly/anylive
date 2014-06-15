@@ -7,11 +7,11 @@ var connect = require('connect');
 var livereload = require('connect-livereload');
 
 var liveReloadServer = new tinylr();
-liveReloadServer.removeAllListeners('error');
-liveReloadServer.on('error',function(err){
-  console.log('livereload server failed :',err);
-  process.exit(1);
-});
+// liveReloadServer.removeAllListeners('error');
+// liveReloadServer.on('error',function(err){
+//   console.log('livereload server failed :',err);
+//   process.exit(1);
+// });
 
 var cwd = process.cwd();
 var staticServerPort = parseInt( process.argv[2] ) || 8080;
@@ -37,9 +37,22 @@ gaze(['**/*.js',
   if(err) return console.log(err);
   console.log('big brother is watching..');
 
-  liveReloadServer.listen(35729,function(err){
-    if(err) return console.log(err);
+  watcher.on('error',function(err){
+    console.log('wahtch error' ,err);
+  });
 
+  liveReloadServer.server.on('error',function(err){
+    console.log('error in lr ');
+    console.log(err);
+    watcher.close();
+    process.abort();
+  });
+
+  liveReloadServer.listen(35729, function(err){
+    console.log('test log');
+    if(err) {
+
+    }
     console.log('second brother is watching..');
     watcher.on('all',function(e,files){
       console.log('files changed',files);
@@ -48,7 +61,8 @@ gaze(['**/*.js',
 
     staticServer.listen(staticServerPort, function (err) {
       if (err) return console.log('static Srever error',err);
-        console.log('static Server is ready on port: '+staticServerPort);
+        console.log('static Server is ready on port: '+staticServerPort,'under two brother watching');
     });
   });
+
 });

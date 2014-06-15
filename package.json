@@ -10,7 +10,7 @@
     "anylive": "./anylive.js"
   },
   "keywords": [
-    "Static",
+    "static",
     "file",
     "server",
     "live-reload"
@@ -21,5 +21,14 @@
     "connect": "~2.19.6",
     "tiny-lr": "0.0.4",
     "connect-livereload": "~0.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stormslowly/anylive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stormslowly/anylive/issues"
+  },
+  "homepage": "https://github.com/stormslowly/anylive"
+
 }
