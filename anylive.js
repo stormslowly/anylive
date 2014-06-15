@@ -35,34 +35,29 @@ gaze(['**/*.js',
       '!node_modules/**'
       ], function(err,watcher){
   if(err) return console.log(err);
-  console.log('big brother is watching..');
+  console.log('File watching is ready...');
 
   watcher.on('error',function(err){
     console.log('wahtch error' ,err);
   });
 
   liveReloadServer.server.on('error',function(err){
-    console.log('error in lr ');
+    console.log('error in LiveReloadServer ');
     console.log(err);
     watcher.close();
     process.abort();
   });
 
-  liveReloadServer.listen(35729, function(err){
-    console.log('test log');
-    if(err) {
-
-    }
-    console.log('second brother is watching..');
+  liveReloadServer.listen(35729, function(){
+    console.log('LiveReloadServer is ready...');
     watcher.on('all',function(e,files){
-      console.log('files changed',files);
       liveReloadServer.changed({body:{files:files}});
     });
 
     staticServer.listen(staticServerPort, function (err) {
       if (err) return console.log('static Srever error',err);
-        console.log('static Server is ready on port: '+staticServerPort,'under two brother watching');
+        console.log('anylive Server is ready on port: '+staticServerPort);
     });
   });
-
 });
+
