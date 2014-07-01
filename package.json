@@ -20,7 +20,8 @@
   "dependencies": {
     "connect": "~2.19.6",
     "tiny-lr": "0.0.4",
-    "connect-livereload": "~0.4.0"
+    "connect-livereload": "~0.4.0",
+    "gaze": "~0.5.1"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,4 @@
     "url": "https://github.com/stormslowly/anylive/issues"
   },
   "homepage": "https://github.com/stormslowly/anylive"
-
 }
