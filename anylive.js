@@ -28,6 +28,7 @@ gaze(['**/*.js',
   '**/*.css',
   '**/*.html',
   '**/*.svg',
+  '**/*.ejs',
   '!.git/**',
   '!node_modules/**'
 ], function(err, watcher) {
